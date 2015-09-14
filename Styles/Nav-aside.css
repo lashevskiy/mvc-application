@@ -1,0 +1,68 @@
+/* =============================== MENU ASIDE START */
+.aside {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+ul.nav-aside {
+    width: 270px;
+    list-style: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+ul.nav-aside li {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d9d9d9;
+}
+ul.nav-aside li:first-child {
+    color: #676767;
+    border-top: solid 10px #89ca18;
+}
+
+ul.nav-aside li:last-child {
+    border-bottom: none;
+}
+
+ul.nav-aside li a {
+    color: #676767;
+    display: block;
+    padding: 22px 10px 22px 30px;
+    line-height: 16px;
+    font-weight: 300;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+}
+
+ul.nav-aside li:hover > a,
+ul.nav-aside li > a.active {
+    background: #f2f2f2;
+    color: #89ca18;
+    font-weight: 700;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+}
+
+.box-wrapper-aside {
+    list-style: none;
+
+    box-sizing: border-box;
+    width: 270px;
+    height: 470px;
+
+    margin-bottom: 30px;
+    background-color:#fff;
+    border:1px solid #dbdbdb;
+    padding:30px;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.box-wrapper-aside:hover {
+    box-shadow:0 0 20px rgba(0,0,0,0.24);
+}
+/* =============================== MENU ASIDE END */

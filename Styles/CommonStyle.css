@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font: 300 16px/24px "Roboto Slab", Arial, Tahoma, sans-serif;
+    line-height: normal;
+    color: #676767;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #F5F5F5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.middle {
+    max-width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+/*.middle:after{
+    content:'';
+    clear:both;
+    display:table;
+}*/

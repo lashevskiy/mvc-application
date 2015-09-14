@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - Bookstore@localhost" uuid="a8a50dd9-d287-4318-8dbd-c73ee91957fe">
+    <database-info product="MySQL" version="5.5.23" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="bookstore"/>
+    <table name="authors" schema="" catalog="bookstore" type="TABLE">
+      <column name="isbn" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="author" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12"/>
+      <index name="author" unique="false" columns="author"/>
+      <index name="isbn" unique="false" columns="isbn"/>
+    </table>
+    <table name="bookcategory" schema="" catalog="bookstore" type="TABLE">
+      <column name="isbn" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idCategory" sqlType="VARCHAR" precision="16" scale="0" nullable="true" jdbcType="12"/>
+      <index name="idCategory" unique="false" columns="idCategory"/>
+      <index name="isbn" unique="false" columns="isbn"/>
+    </table>
+    <table name="books" schema="" catalog="bookstore" type="TABLE">
+      <column name="isbn" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="price" sqlType="FLOAT" precision="12" scale="0" nullable="false" jdbcType="7"/>
+      <column name="year" sqlType="YEAR" precision="0" scale="0" nullable="true" jdbcType="91"/>
+      <column name="pages" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="orderCount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="isbn"/>
+      <index name="isbn" unique="false" columns="isbn"/>
+      <index name="title" unique="false" columns="title"/>
+    </table>
+    <table name="categoryname" schema="" catalog="bookstore" type="TABLE">
+      <column name="idCategory" sqlType="VARCHAR" precision="16" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="sName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idCategory"/>
+      <index name="sName" unique="false" columns="sName"/>
+    </table>
+    <table name="customers" schema="" catalog="bookstore" type="TABLE">
+      <column name="custNo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="firstName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="custNo"/>
+    </table>
+    <table name="purchases" schema="" catalog="bookstore" type="TABLE">
+      <column name="custNo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="isbn" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <index name="custNo" unique="true" columns="custNo"/>
+      <index name="custNo_2" unique="false" columns="custNo"/>
+      <index name="isbn" unique="false" columns="isbn"/>
+    </table>
+    <table name="users" schema="" catalog="bookstore" type="TABLE">
+      <column name="custNo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="login" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="CHAR" precision="128" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="custNo"/>
+      <index name="login" unique="true" columns="login"/>
+      <index name="login_2" unique="false" columns="login"/>
+    </table>
+  </data-source>
+</component>
