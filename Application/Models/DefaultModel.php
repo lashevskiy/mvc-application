@@ -36,7 +36,7 @@ class DefaultModel extends Model
         return $books;
     }
 
-    public function getDataRandom()
+    public function getDataRandom($count)
     {
         $sql = "SELECT
                         t.isbn,
@@ -45,9 +45,9 @@ class DefaultModel extends Model
                         (SELECT author FROM authors a WHERE a.isbn = t.isbn LIMIT 1) as author
                     FROM
                         books t
-                    ORDER BY RAND()
-
-                    LIMIT 3";
+                    ORDER BY
+                        RAND()
+                    LIMIT $count";
 
 
         $this->setSqlQuery($sql);

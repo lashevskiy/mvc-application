@@ -12,6 +12,7 @@ class BookController extends Controller
 {
     public function index($argv = null)
     {
+        parent::index();
         $book = $this->model->getData($argv);
 
         if(empty($book))

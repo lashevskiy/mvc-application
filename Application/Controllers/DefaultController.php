@@ -13,10 +13,13 @@ class DefaultController extends Controller
 {
     function index()
     {
+        if(isset($_GET['search']))
+            echo $_GET['search'];
+        parent::index();
         $contentArray = array();
         $titleArray = array();
 
-        $books = $this->model->getDataRandom();
+        $books = $this->model->getDataRandom(3);
         array_push($contentArray, $books);
         array_push($titleArray, 'Рекомендуем');
         $this->view->set('booksRandom', $books);

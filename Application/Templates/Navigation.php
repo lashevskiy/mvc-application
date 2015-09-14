@@ -14,8 +14,8 @@
             <li><a href="#">Личный кабинет</a></li>
             <li><a href="#">Регистрация</a></li>
         </ul>
-        <form class="search-form" action="index.html" method="get">
-            <input type="search" name="search" class="search-input" placeholder="ISBN, автор или название"><!--<button type="submit" class="search-button">Найти</button>-->
+        <form class="search-form" action="/search" method="POST">
+            <input type="text" name="search" class="search-input" placeholder="ISBN, автор или название"><!--<button type="submit" class="search-button">Найти</button>-->
         </form>
     </div>
 </nav>

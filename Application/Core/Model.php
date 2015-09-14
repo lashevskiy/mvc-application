@@ -18,7 +18,7 @@ class Model
 
     public function __construct()
     {
-        require_once BASE_PATH . D_CORE . 'Credentials.php';
+        require BASE_PATH . D_CORE . 'Credentials.php';
         $this->_dbConnection = new mysqli($_dbHost, $_dbUser, $_dbPass, $_dbName);
 
         if($this->_dbConnection->connect_error)
@@ -41,6 +41,45 @@ class Model
 	{
 		// todo
 	}
+
+    function GetMenuFromDatabase()
+    {
+        $sql = "SELECT sName FROM CategoryName";
+        $this->setSqlQuery($sql);
+        $titleArray = array();
+
+        $titleArray = $this->getAll();
+
+        if (empty($titleArray)) {
+            return false;
+        }
+        return $titleArray;
+    }
+
+    public function getRandomBook($count)
+    {
+        $sql = "SELECT
+                        t.isbn,
+                        t.title,
+                        t.price,
+                        (SELECT author FROM authors a WHERE a.isbn = t.isbn LIMIT 1) as author
+                    FROM
+                        books t
+                    ORDER BY
+                        RAND()
+                    LIMIT $count";
+
+        $this->setSqlQuery($sql);
+
+        $books = $this->getAll();
+
+        if(empty($books))
+        {
+            return false;
+        }
+
+        return $books;
+    }
 
     protected function setSqlQuery($query)
     {

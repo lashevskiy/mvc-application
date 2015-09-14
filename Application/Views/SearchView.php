@@ -2,16 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: lashevskiy
- * Date: 11.09.2015
- * Time: 1:21
+ * Date: 14.09.2015
+ * Time: 22:09
  */
 ?>
-
-<?php if($contentArray > 0) {
-    foreach($contentArray as $key => $books) { ?>
+<?php if($books > 0) { ?>
     <div class="middle">
         <section class="section">
-            <div class="box-heading"><?php echo $titleArray[$key]; ?></div>
+            <div class="box-heading">Популярные</div>
             <ul class="books-list">
                 <?php foreach($books as $book) { ?>
                     <li class="box-wrapper">
@@ -31,9 +29,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <span class="price">
-                                <?php echo $book['price']; ?> р.
-                            </span>
+                    <span class="price">
+                        <?php echo $book['price']; ?> р.
+                    </span>
                             <div class="box-button">
                                 <a href="#"><button class="button-add">Купить</button></a>
                             </div>
@@ -43,6 +41,4 @@
             </ul>
         </section>
     </div>
-    <?php } ?>
 <?php } ?>
-

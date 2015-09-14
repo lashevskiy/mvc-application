@@ -7,24 +7,34 @@
  */
 ?>
 <ul>
+    <?php foreach($booksAside as $bookAside) { ?>
     <div class="box-heading-aside">Рекомендуем</div>
     <li class="box-wrapper-aside">
         <div class="box-content">
             <div class="content-img">
-                <a href="index.html">
-                    <img src="/Images/978-5-389-07435-4.jpg" alt="BookStore" title="BookStore">
+                <a href="/book/<?php echo $bookAside['isbn']; ?>">
+                    <img src="/Images/<?php echo $bookAside['isbn']; ?>.jpg" alt="Нет изображения" title="<?php echo $bookAside['title']; ?>">
                 </a>
             </div>
-            <p class="author">Лафоре Р., Лашевский А.</p>
+            <p class="author">
+                <?php echo $bookAside['author']; ?>
+            </p>
             <div class="description">
-                <div class="wrapper">
-                    Объектно-ориентированное программирование в С++. Классика Computer Science
-                </div>
+                <a href="/book/<?php echo $bookAside['isbn']; ?>">
+                    <div class="wrapper">
+                        <?php echo $bookAside['title']; ?>
+                    </div>
+                </a>
             </div>
-            <span class="price">1231 р.</span>
+            <span class="price">
+                <?php echo $bookAside['price']; ?> р.
+            </span>
             <div class="box-button">
                 <a href="#"><button class="button-add">Купить</button></a>
             </div>
         </div>
     </li>
+    <?php } ?>
 </ul>
+
+

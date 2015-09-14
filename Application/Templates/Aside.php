@@ -8,9 +8,6 @@
 ?>
 
 <?php
-require_once BASE_PATH . D_CONTROLLER . 'PageController.php';
-$pageController = new MainAppSpace\PageController();
-$menuItems = $pageController->GetMenu();
 $url = explode('/', $_SERVER['REQUEST_URI']);
 $class = "";
 ?>

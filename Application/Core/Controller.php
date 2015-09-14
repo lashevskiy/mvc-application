@@ -31,8 +31,14 @@ class Controller
 	}
 
 	// действие (action), вызываемое по умолчанию
-	function index()
+	public function index()
 	{
 		// todo
+		$menuItems = $this->model->GetMenuFromDatabase();
+		$this->view->set('menuItems', $menuItems);
+
+		$booksAside = $this->model->getRandomBook(1);
+		$this->view->set('booksAside', $booksAside);
+
 	}
 }
