@@ -15,6 +15,14 @@
 <?php include("Aside.php"); ?>
 
 
+<?php if(isset($header)) {?>
+<div class="middle">
+	<section class="section">
+		<div class="box-heading"><?php echo $header; ?></div>
+	</section>
+</div>
+<?php }?>
+
 <?php include D_VIEW . $content_view; ?>
 
 <div class="clearfix"></div>

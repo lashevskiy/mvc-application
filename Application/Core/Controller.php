@@ -26,6 +26,10 @@ class Controller
 			$modelName = __NAMESPACE__ . DS . ucwords($this->controller) . 'Model';
 			$this->model = new $modelName();
 		}
+		else
+		{
+			$this->model = new DefaultModel();
+		}
 
 		$this->view = new View();
 	}

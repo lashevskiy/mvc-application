@@ -11,9 +11,9 @@ namespace MainAppSpace;
 
 class BooksModel extends Model
 {
-    public function getData($type = null)
+    public function getBooks($category = null)
     {
-        if(isset($type) and $type != null)
+        if(isset($category) and $category != null)
         {
             $sql = "SELECT DISTINCT
                         t.isbn,
@@ -27,7 +27,7 @@ class BooksModel extends Model
                     ON
                         t.isbn = c.isbn
                     WHERE
-                        c.idcategory = $type";
+                        c.idcategory = '$category'";
 
             $this->setSqlQuery($sql);
 

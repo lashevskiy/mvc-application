@@ -52,12 +52,15 @@
       <index name="isbn" unique="false" columns="isbn"/>
     </table>
     <table name="users" schema="" catalog="bookstore" type="TABLE">
-      <column name="custNo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="login" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="CHAR" precision="128" scale="0" nullable="false" jdbcType="1"/>
-      <primary-key name="PRIMARY" columns="custNo"/>
-      <index name="login" unique="true" columns="login"/>
-      <index name="login_2" unique="false" columns="login"/>
+      <column name="email" sqlType="CHAR" precision="128" scale="0" nullable="false" jdbcType="1"/>
+      <column name="firstName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="username" unique="true" columns="username"/>
+      <index name="username_2" unique="false" columns="username"/>
     </table>
   </data-source>
 </component>

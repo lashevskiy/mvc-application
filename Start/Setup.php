@@ -59,27 +59,31 @@ $object->createTable("CategoryName",
                     PRIMARY KEY(isbn)",
                     "MyISAM");*/
 
-$object->createTable("Customers",
+/*$object->createTable("Customers",
                     "custNo INT UNSIGNED AUTO_INCREMENT,
                     firstName VARCHAR(32),
                     lastName VARCHAR(32),
 	                PRIMARY KEY (CustNo)",
-                    "MyISAM");
+                    "MyISAM");*/
 
-$object->createTable("Purchases",
-                    "custNo INT UNSIGNED UNIQUE,
+/*$object->createTable("Purchases",
+                    "id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    idUser INT UNSIGNED NOT NULL,
 	                isbn VARCHAR(24),
 	                date DATETIME,
-	                INDEX (custNo),
+	                INDEX (idUser),
                     INDEX (isbn(20))",
-                    "MyISAM");
+                    "MyISAM");*/
 
 $object->createTable("Users",
-                    "custNo INT UNSIGNED NOT NULL AUTO_INCREMENT,
-                    login VARCHAR(32) NOT NULL UNIQUE,
+                    "id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    username VARCHAR(32) NOT NULL UNIQUE,
 	                password CHAR(128) NOT NULL,
-	                PRIMARY KEY (custNo),
-                    INDEX (login(16))",
+	                email CHAR(128) NOT NULL,
+	                firstName VARCHAR(32),
+                    lastName VARCHAR(32),
+	                PRIMARY KEY (id),
+                    INDEX (username(16))",
                     "MyISAM");
 
 //$object->deleteDatabase("BookStore");

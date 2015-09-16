@@ -37,7 +37,7 @@ class Model
         return $result;
     }
 
-	public function getData()
+	public function getBooks()
 	{
 		// todo
 	}

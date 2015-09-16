@@ -9,7 +9,6 @@
 <?php if($books > 0) { ?>
     <div class="middle">
         <section class="section">
-            <div class="box-heading">Популярные</div>
             <ul class="books-list">
                 <?php foreach($books as $book) { ?>
                     <li class="box-wrapper">

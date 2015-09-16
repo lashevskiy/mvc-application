@@ -8,26 +8,26 @@
 ?>
 
 <?php
-$url = explode('/', $_SERVER['REQUEST_URI']);
+
+//TODO: убрать логику из html: перенести выставление активного элемента меню в функцию
+$url = trim($_SERVER['REQUEST_URI'], '/');
+$url = filter_var($url, FILTER_SANITIZE_URL);
+$url = explode('/', $url);
 $class = "";
 ?>
 <div class="content middle">
     <aside class="aside">
         <ul class="nav-aside">
             <?php foreach($menuItems as $key => $value) {
-                if(isset($url[1]) and $url[1] == 'books')
+                $class = "";
+                if(isset($url[0]) and $url[0] === 'books')
                 {
-                    if(empty($url[2]) and $key == '0')
-                    {
+                    if(isset($url[1]) and $key == $url[1])
                         $class = "class = 'active'";
-                    }
-                    else if(isset($url[2]) and $key == $url[2])
-                    {
-                        $class = "class = 'active'";
-                    }
-                    else $class = "";
+                    else
+                        $class = "";
                 }
-
+                else $class = "";
                 ?>
                 <li><a href="/books/<?php echo $key; ?>" <?php echo $class; ?>><?php echo $value['sName']; ?></a></li>
             <?php } ?>

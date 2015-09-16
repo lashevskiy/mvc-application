@@ -10,14 +10,15 @@ namespace MainAppSpace;
 
 class BookController extends Controller
 {
-    public function index($argv = null)
+    public function index($isbn = null)
     {
         parent::index();
-        $book = $this->model->getData($argv);
+        $book = $this->model->getBookDescription($isbn);
 
         if(empty($book))
         {
-            $this->view->generate('ErrorBookView.php' , 'TemplateView.php');
+            $this->view->set('header', 'Информации не найдено');
+            $this->view->generate('ErrorView.php' , 'TemplateView.php');
         }
         else
         {

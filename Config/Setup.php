@@ -23,6 +23,3 @@ namespace MainAppSpace;
     define('D_CORE', 'Application/Core/');
     define('D_CONFIG', 'Config/');
     define('D_IMAGES', 'Images/');
-
-    // Include required file
-    /*require_once BASE_PATH . D_CONTROLLER . 'PageController.php';*/

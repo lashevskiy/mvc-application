@@ -13,8 +13,20 @@ class SearchController extends Controller
 {
     function index()
     {
+        $books = $this->model->searchBooks();
+
         parent::index();
-        $this->view->set('books', $this->model->searchBooks());
-        $this->view->generate('SearchView.php', 'TemplateView.php');
+
+        if(empty($books))
+        {
+            $this->view->set('header', 'Информации не найдено');
+            $this->view->generate('ErrorView.php' , 'TemplateView.php');
+        }
+        else
+        {
+            $this->view->set('header', 'Результаты поиска');
+            $this->view->set('books', $books);
+            $this->view->generate('SearchView.php', 'TemplateView.php');
+        }
     }
 }

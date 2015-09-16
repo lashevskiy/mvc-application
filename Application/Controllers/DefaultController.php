@@ -13,8 +13,6 @@ class DefaultController extends Controller
 {
     function index()
     {
-        if(isset($_GET['search']))
-            echo $_GET['search'];
         parent::index();
         $contentArray = array();
         $titleArray = array();
@@ -23,15 +21,15 @@ class DefaultController extends Controller
         array_push($contentArray, $books);
         array_push($titleArray, 'Рекомендуем');
         $this->view->set('booksRandom', $books);
-        $books = $this->model->getData('price');
+        $books = $this->model->getBooks('price');
         array_push($contentArray, $books);
         array_push($titleArray, 'Лучшая цена');
         $this->view->set('booksOrderByPrice', $books);
-        $books = $this->model->getData('releaseDate');
+        $books = $this->model->getBooks('releaseDate');
         array_push($contentArray, $books);
         array_push($titleArray, 'Новинки');
         $this->view->set('booksOrderByReleaseDate', $books);
-        $books = $this->model->getData('orderCount DESC');
+        $books = $this->model->getBooks('orderCount DESC');
         array_push($contentArray, $books);
         array_push($titleArray, 'Хиты продаж');
         $this->view->set('booksOrderByOrderCount', $books);

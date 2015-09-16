@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: lashevskiy
- * Date: 11.09.2015
- * Time: 1:31
+ * Date: 15.09.2015
+ * Time: 16:08
  */
 ?>
 <div class="middle">
     <section class="section">
         <div class="box-wrapper-view">
-            <form class="sign-form" action="#" method="POST" onsubmit="return CheckRegForm(this)">
+            <form class="sign-form" action="#" method="POST">
                 <?php if (isset($message)) echo $message; ?>
                 <fieldset>
                     <label for="username">Username: *</label>
@@ -25,17 +25,23 @@
                 </fieldset>
                 <fieldset>
                     <label for="email">E-mail address: *</label>
-                    <input type="email" name="email" class="input-text" placeholder="E-mail адрес" required value="<?php echo $user['email']; ?>">
+                    <input type="email" name="email" class="input-text" placeholder="E-mail адрес" value="<?php echo $user['email']; ?>" required >
+                </fieldset>
+                <button type="submit" name="SaveChangesButtonClick" class="button sign">Сохранить изменения</button>
+            </form>
+            <form class="sign-form margin-top" action="#" method="POST">
+                <fieldset>
+                    <label for="password">New password: *</label>
+                    <input type="password" name="password" class="input-text" placeholder="Новый пароль" required>
                 </fieldset>
                 <fieldset>
-                    <label for="password">Password: *</label>
-                    <input type="password" name="password" class="input-text" placeholder="Придумайте пароль" required>
+                    <label for="confirm-password">Confirm new password: *</label>
+                    <input type="password" name="confirm-password" class="input-text" placeholder="Повторите новый пароль" required>
                 </fieldset>
-                <fieldset>
-                    <label for="confirm-password">Confirm password: *</label>
-                    <input type="password" name="confirm-password" class="input-text" placeholder="Повторите пароль" required>
-                </fieldset>
-                <button type="submit" name="SignUpButtonClick" class="button sign">Зарегистрироваться</button>
+                <button type="submit" name="SavePasswordChangesButtonClick" class="button sign">Сохранить пароль</button>
+            </form>
+            <form class="sign-form margin-top" action="#" method="POST">
+                <button type="submit" name="SignOutButtonClick" class="button-reverse">Выйти из личного кабинета</button>
             </form>
         </div>
     </section>

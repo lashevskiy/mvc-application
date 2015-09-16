@@ -39,6 +39,10 @@ class Route
 		{
 			require_once BASE_PATH . D_MODEL . $modelName . '.php';
 		}
+		else
+		{
+			require_once BASE_PATH . D_MODEL . 'DefaultModel.php';
+		}
 
 		// Контроллер
 		$controllerName = ucwords(strtolower($this->controller)) . 'Controller';

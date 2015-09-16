@@ -17,6 +17,8 @@
     border: 1px solid #dbdbdb;
     box-sizing: border-box;
     width: 100%;
+
+    letter-spacing: 0.1em;
 }
 
 .box-heading-aside {

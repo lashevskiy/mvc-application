@@ -6,6 +6,9 @@
  * Time: 22:15
  */
 
+session_start();
+/*var_dump($_SESSION);*/
+
 ini_set('display_errors', 1);
 define('INDEX_ACCESS_ALLOWED', 1);
 

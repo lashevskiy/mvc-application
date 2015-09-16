@@ -11,7 +11,7 @@ namespace MainAppSpace;
 
 class DefaultModel extends Model
 {
-    public function getData($orderBy = null)
+    public function getBooks($orderBy = null)
     {
         $sql = "SELECT DISTINCT
                         t.isbn,
