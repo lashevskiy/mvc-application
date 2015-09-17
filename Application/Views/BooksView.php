@@ -10,7 +10,6 @@
 <?php if($books > 0) { ?>
 <div class="middle">
     <section class="section">
-        <div class="box-heading">Популярные</div>
         <ul class="books-list">
             <?php foreach($books as $book) { ?>
             <li class="box-wrapper">
@@ -34,7 +33,7 @@
                         <?php echo $book['price']; ?> р.
                     </span>
                     <div class="box-button">
-                        <a href="#"><button class="button-add">Купить</button></a>
+                        <button class="button-add" bookPrice = "<?php echo $book['price']; ?>" bookId = "<?php echo $book['isbn']; ?>">Купить</button></a>
                     </div>
                 </div>
             </li>

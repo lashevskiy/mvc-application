@@ -19,3 +19,4 @@
 <link rel="stylesheet" type="text/css" href="/Styles/Footer.css" media="all">
 <link rel="stylesheet" type="text/css" href="/Styles/Clearfix.css" media="all">
 <link rel="stylesheet" type="text/css" href="/Styles/Logic.css" media="all">
+<link rel="stylesheet" type="text/css" href="/Styles/OrderView.css" media="all">

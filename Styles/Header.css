@@ -10,5 +10,15 @@
 
 .header .layout-column-2 {
     float: right;
+    margin-right: 20px;
 }
+.header .layout-column-2 .orderPrice {
+    margin-bottom: 5px;
+}
+
+.order span {
+    font-weight: 400;
+    /*color: #89ca18;*/
+}
+
 /* =============================== Header END */

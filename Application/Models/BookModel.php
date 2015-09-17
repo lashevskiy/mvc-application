@@ -28,13 +28,13 @@ class BookModel extends Model
 
         $this->setSqlQuery($sql);
 
-        $book = $this->getAll();
+        $books = $this->getAll();
 
-        if(empty($book))
+        if(empty($books))
         {
             return false;
         }
 
-        return $book;
+        return $books;
     }
 }

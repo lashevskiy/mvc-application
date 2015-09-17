@@ -10,7 +10,7 @@
     <div class="middle">
         <ul>
             <li><a href="/">Главная</a></li>
-            <li><a href="#">Корзина покупок</a></li>
+            <li><a href="/orders">Корзина покупок</a></li>
             <?php
             if(isset($_SESSION['username'])) {?>
             <li><a href="/account">Личный кабинет</a></li>

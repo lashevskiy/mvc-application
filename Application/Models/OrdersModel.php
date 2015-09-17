@@ -2,32 +2,43 @@
 /**
  * Created by PhpStorm.
  * User: lashevskiy
- * Date: 15.09.2015
- * Time: 13:45
+ * Date: 17.09.2015
+ * Time: 4:26
  */
 
 namespace MainAppSpace;
 
 
-class SignUpModel extends Model
+class OrdersModel extends Model
 {
-    public function setUserInfo()
+    public function getBookOrder($isbn = null)
     {
-        $user = array();
-        $user['username'] = $user['firstname'] = $user['lastname'] = $user['email'] = "";
-        if(isset($_POST['username']))
-            $user['username'] = $_POST['username'];
-        if(isset($_POST['firstname']))
-            $user['firstname'] = $_POST['firstname'];
-        if(isset($_POST['lastname']))
-            $user['lastname'] = $_POST['lastname'];
-        if(isset($_POST['email']))
-            $user['email'] = $_POST['email'];
+        $sql = "SELECT DISTINCT
+                    t.isbn,
+                    t.title,
+                    t.price,
+                    t.year,
+                    t.pages,
+                    t.description,
+                    (SELECT author FROM authors a WHERE a.isbn = t.isbn LIMIT 1) as author
+                FROM
+                    books t
+             	WHERE t.isbn = '$isbn'";
 
-        return $user;
+        $this->setSqlQuery($sql);
+
+        $books = $this->getAll();
+
+        if(empty($books))
+        {
+            return false;
+        }
+
+        return $books;
     }
 
-    function SignUpUser()
+
+    function BuyOrder($orders)
     {
         $message = '';
 

@@ -22,14 +22,14 @@ $class = "";
                 $class = "";
                 if(isset($url[0]) and $url[0] === 'books')
                 {
-                    if(isset($url[1]) and $key == $url[1])
+                    if(isset($url[2]) and $key == $url[2])
                         $class = "class = 'active'";
                     else
                         $class = "";
                 }
                 else $class = "";
                 ?>
-                <li><a href="/books/<?php echo $key; ?>" <?php echo $class; ?>><?php echo $value['sName']; ?></a></li>
+                <li><a href="/books/category/<?php echo $key; ?>" <?php echo $class; ?>><?php echo $value['sName']; ?></a></li>
             <?php } ?>
         </ul>
 

@@ -7,6 +7,7 @@
  */
 ?>
 
+
 <?php if($contentArray > 0) {
     foreach($contentArray as $key => $books) { ?>
     <div class="middle">
@@ -35,7 +36,7 @@
                                 <?php echo $book['price']; ?> р.
                             </span>
                             <div class="box-button">
-                                <a href="#"><button class="button-add">Купить</button></a>
+                                <button class="button-add" bookPrice = "<?php echo $book['price']; ?>" bookId = "<?php echo $book['isbn']; ?>">Купить</button></a>
                             </div>
                         </div>
                     </li>

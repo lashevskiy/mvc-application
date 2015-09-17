@@ -20,57 +20,49 @@ class AccountController extends Controller
             $this->account();
         }
 
-        $this->view->set('header', 'Личный кабинет');
-        $this->view->generate('AccountView.php' , 'TemplateView.php');
+        /*$this->view->set('header', 'Личный кабинет');*/
+        /*$this->view->generate('AccountView.php' , 'TemplateView.php');*/
     }
 
 
     function account()
     {
-        parent::index();
+        /*parent::index();*/
 
         if (!true/*!$this->CheckLogin()*/)
         {
             /*header("Location: /account");*/
         }
+
+
+        $this->view->set('header', 'Личный кабинет');
+
+
         if (isset($_POST['SignOutButtonClick']))
         {
             $this->Logout();
         }
 
-        $this->view->set('header', 'Личный кабинет');
-        $info = $this->model->GetUserInfo();
+        if(isset($_POST['SavePasswordChangesButtonClick']))
+        {
+            $this->view->set('message', $this->model->UpdatePassword());
+        }
 
+        if(isset($_POST['SaveChangesButtonClick']))
+        {
+            $this->view->set('message', $this->model->UpdateUser());
+        }
+
+        $info = $this->model->GetUserInfo();
         if($info === false)
         {
-
+            $this->view->set('user', NULL);
             $this->view->set('message', 'Ошибка в получении данных');
         }
         else
         {
             $this->view->set('user', $info);
         }
-
-         /*
-
-         if(isset($_POST['SaveChangesButtonClick'])){
-             $this->view->set('message', $this->model->UpdateUser());
-         }
-
-         if(isset($_POST['SavePasswordChangesButtonClick'])){
-             $this->view->set('message', $this->model->UpdatePassword());
-         }
-
-         $info = $this->model->GetUserInfo();
-         if($info === false) {
-             $this->view->set('message', 'Ошибка в получении данных');
-         }
-         else{
-             $this->view->set('username', $_SESSION['username']);
-             $this->view->set('firstname', $info['firstname']);
-             $this->view->set('lastname', $info['lastname']);
-             $this->view->set('email', $info['email']);
-         }*/
 
         $this->view->generate('AccountView.php' , 'TemplateView.php');
     }

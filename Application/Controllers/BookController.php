@@ -22,7 +22,7 @@ class BookController extends Controller
         }
         else
         {
-            $this->view->set('book', $book);
+            $this->view->set('books', $book);
             $this->view->generate('BookView.php' , 'TemplateView.php');
         }
     }

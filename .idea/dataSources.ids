@@ -26,6 +26,7 @@
       <column name="year" sqlType="YEAR" precision="0" scale="0" nullable="true" jdbcType="91"/>
       <column name="pages" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
       <column name="orderCount" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="releaseDate" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
       <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="isbn"/>
       <index name="isbn" unique="false" columns="isbn"/>
@@ -36,20 +37,6 @@
       <column name="sName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="idCategory"/>
       <index name="sName" unique="false" columns="sName"/>
-    </table>
-    <table name="customers" schema="" catalog="bookstore" type="TABLE">
-      <column name="custNo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="firstName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
-      <column name="lastName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="custNo"/>
-    </table>
-    <table name="purchases" schema="" catalog="bookstore" type="TABLE">
-      <column name="custNo" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="isbn" sqlType="VARCHAR" precision="24" scale="0" nullable="true" jdbcType="12"/>
-      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <index name="custNo" unique="true" columns="custNo"/>
-      <index name="custNo_2" unique="false" columns="custNo"/>
-      <index name="isbn" unique="false" columns="isbn"/>
     </table>
     <table name="users" schema="" catalog="bookstore" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

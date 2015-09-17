@@ -43,4 +43,30 @@ class BooksModel extends Model
             return false;
         }
     }
+
+    public function getCategoryName($category = null)
+    {
+        if(isset($category) and $category != null)
+        {
+            $sql = "SELECT
+                        c.sName
+                    FROM
+                        categoryname c
+                    WHERE
+                        c.idcategory = '$category'";
+
+            $this->setSqlQuery($sql);
+
+            $categoryName = $this->getAll();
+
+            if (empty($categoryName)) {
+                return false;
+            }
+            return $categoryName;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
