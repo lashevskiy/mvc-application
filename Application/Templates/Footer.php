@@ -19,7 +19,7 @@ $menuItems = $pageController->GetMenu();*/
             <h1>Категории</h1>
             <ul>
                 <?php foreach($menuItems as $key => $value) { ?>
-                    <li><a href="/books/<?php echo $key; ?>" <?php echo $class; ?>><?php echo $value['sName']; ?></a></li>
+                    <li><a href="/books/category/<?php echo $key; ?>" <?php echo $class; ?>><?php echo $value['sName']; ?></a></li>
                 <?php } ?>
             </ul>
         </div>
